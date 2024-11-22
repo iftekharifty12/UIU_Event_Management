@@ -1,0 +1,32 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins', sans-serif;
+     font-family: 'Roboto', sans-serif;
+}
+.button button{
+     background: #f68b1f;
+     padding: 10px 80px;
+     letter-spacing: 2px;
+     max-width: 100%;
+}
+.button button:hover{
+     background: #f68b1f;
+}
+.input-box>.custom-placeholder {
+     border: 1px solid #f68b1f;
+}
+.custom-placeholder::placeholder{
+     color:#9b9ba0;
+}
+
+
+a{
+     color: #f68b1f;
+     list-style: none;
+     text-decoration: none;
+}
+.footer_info{
+     background: #f68b1f;
+}

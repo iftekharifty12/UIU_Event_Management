@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+</style>
+</head>
+<body>
+
+<div class="col-md-6">
+  <div class="form-group">
+    <label for="category" class="mt-2">Category</label>
+    <select class="form-control" id="category" name="category">
+      <option value="category1">Category 1</option>
+      <option value="category2">Category 2</option>
+      <option value="category3">Category 3</option>
+    </select>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="form-group">
+    <label for="room" class="mt-2">Room</label>
+    <select class="form-control" id="room" name="room">
+      <option value="room1-cat1-floor1">Room 1 (Category 1, Floor 1)</option>
+      <option value="room2-cat1-floor1">Room 2 (Category 1, Floor 1)</option>
+      <!-- Add more options as needed -->
+      <!-- ... -->
+      <option value="room30-cat3-floor10">Room 30 (Category 3, Floor 10)</option>
+    </select>
+  </div>
+</div>
+
+<table id="roomStatusTable" class="table">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Room</th>
+      <!-- Add headers for each floor -->
+      <th>Floor 1</th>
+      <th>Floor 2</th>
+      <!-- ... Add headers for all floors ... -->
+      <th>Floor 10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Table rows will be added dynamically using JavaScript -->
+  </tbody>
+</table>
+
+<script>
+  // Function to update the room status table
+  function updateRoomStatusTable() {
+    const roomStatusTable = document.getElementById('roomStatusTable');
+    const categorySelect = document.getElementById('category');
+    const roomSelect = document.getElementById('room');
+
+    const selectedCategory = categorySelect.value;
+    const selectedRoom = roomSelect.value;
+    const roomStatus = isRoomBooked(selectedRoom) ? 'Booked' : 'Available';
+
+    // Find the floor number from the room value (assuming room format: "roomX-catY-floorZ")
+    const floorNumber = parseInt(selectedRoom.split('-')[3]);
+
+    // Find the existing row for the selected room and category
+    const existingRow = roomStatusTable.querySelector(`tr[data-category="${selectedCategory}"][data-room="${selectedRoom}"]`);
+
+    if (existingRow) {
+      // Update the status cell in the existing row
+      existingRow.querySelector(`td[data-floor="${floorNumber}"]`).textContent = roomStatus;
+    } else {
+      // Create a new table row
+      const newRow = roomStatusTable.insertRow();
+      newRow.dataset.category = selectedCategory;
+      newRow.dataset.room = selectedRoom;
+
+      const categoryCell = newRow.insertCell(0);
+      const roomCell = newRow.insertCell(1);
+
+      // Populate the cells with data
+      categoryCell.textContent = selectedCategory;
+      roomCell.textContent = selectedRoom;
+
+      // Create cells for each floor and populate the status
+      for (let i = 1; i <= 10; i++) {
+        const statusCell = newRow.insertCell(i + 1);
+        statusCell.dataset.floor = i;
+        statusCell.textContent = i === floorNumber ? roomStatus : '-';
+      }
+    }
+  }
+
+  // Function to check if a room is booked (You need to implement this)
+  function isRoomBooked(room) {
+    // Implement your logic here to determine if the room is booked
+    // For demonstration purposes, let's assume that rooms with "cat2" in their value are booked.
+    return room.includes('cat2');
+  }
+
+  // Add event listener to the room select element
+  document.getElementById('room').addEventListener('change', updateRoomStatusTable);
+</script>
+
+</body>
+</html>

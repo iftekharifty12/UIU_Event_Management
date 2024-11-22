@@ -1,0 +1,176 @@
+*{
+    font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+}
+
+
+nav{
+    background-color: #f68b1f ;
+}
+
+#nav-logo #logo{
+    height: 90px;
+    width: 100px;
+}
+.navbar-nav {
+    margin-left: auto;
+}
+
+.input-width{
+    width: auto !important;
+    padding:0 50px;
+    border:1px solid black;
+}
+
+.ul-width{
+    width: 500px;
+    background-color: #f68b1f ;
+    color: white;
+}
+
+#t1{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+
+#s1{
+   
+    color: #B0B0B0;
+}
+
+#s2{
+    color: black;
+}
+
+.seemore{
+       background-color: #f68b1f;
+    color: white;
+
+}
+#b1{
+    background-color: #f68b1f;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+.card-box-container{
+    display: flex;
+    margin: auto;
+}
+#btn_banner1 {
+    margin-top: 250px;
+    margin-left: 100px;
+}
+#btn_banner2 {
+    margin-top: 250px;
+    margin-left: 150px;
+}
+.card-main{
+    
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    grid-gap: 100px;
+}
+.button-see{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.event-box{
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    margin-left: 5px;
+    
+}
+
+.event-main{
+    display: flex;
+    justify-content: center;
+}
+#nomore{
+    display: none;
+}
+#seeless-btn2{
+    display: none;
+}
+
+.banner{
+    position: relative;
+    height: 420px;
+    width: 70%;
+    margin-bottom: 200px;
+    margin:30px auto;
+  
+}
+.banner img{
+    height: 100%;
+    width: 100%;
+}
+.banner button{
+    position: absolute;
+    bottom:80px;
+    right:100px;
+    height: 40px;
+    width: 120px;
+    border:none;
+    background-color: #f68b1f;
+    color:white;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+a{
+    color: #f68b1f;
+    list-style: none;
+    text-decoration: none !important;
+  }
+
+.footer_info {
+    background: #f68b1f;
+  }
+  .feature_image{
+       min-width: 350px;
+  }
+
+  #l_div{
+    float: left;
+    width: 50%;
+    margin-left: 50px;
+  }
+
+  #r_div{
+    float: right;
+    width: 50%;
+  }
+
+.hola{
+    background-color: #f68b1f;
+    height: 70px;
+}
+
+#input1{
+    height: 150px;
+}
+ 
+
+.button button{
+    background: #f68b1f;
+    padding: 10px 80px;
+    letter-spacing: 2px;
+    max-width: 100%;
+    
+}
+.button button:hover{
+    background: #f68b1f;
+}
+.input-box>.custom-placeholder {
+    border: 1px solid #f68b1f;
+}
+.custom-placeholder::placeholder{
+    color:#9b9ba0;
+}
